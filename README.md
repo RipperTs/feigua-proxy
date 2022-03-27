@@ -74,14 +74,14 @@ systemctl restart redis
 
 ```
 # create user
-useradd peko
-passwd peko
-su peko
+useradd ripper
+passwd ripper
+su ripper
 
 # clone project
 mkdir ~/Projects
 cd ~/Projects
-git clone https://gitee.com/shenyang-chuangcai/tiktok-proxy
+git clone https://gitee.com/ripperTs/flying-melon-data-agent-script
 cd tiktok-proxy
 
 # replace npm source
@@ -102,8 +102,8 @@ npm install pm2@latest -g
 # config openresty
 exit
 cd /usr/local/openresty/nginx/conf/
-ln -s /home/peko/Projects/tiktok-proxy/configs/ .
-# ln -s /home/peko/Projects/tiktok-proxy/configs/ .
+ln -s /home/ripper/Projects/tiktok-proxy/configs/ .
+# ln -s /home/ripper/Projects/tiktok-proxy/configs/ .
 vi nginx.conf
 
 # restart all service
@@ -136,7 +136,7 @@ set $ip 'xxx.xxx.xxx.xxx';
 ```
 # nginx.conf
 user  root;
-error_log  logs/peko.log debug;
+error_log  logs/ripper.log debug;
 access_log  logs/access.log  main;
 #gzip  on;
 
@@ -155,7 +155,7 @@ replica-read-only no
 # 备注
 ### 变更服务器IP和域名
 ```
-su peko
+su ripper
 cd ~/Projects/tiktok-proxy/configs/
 vi douyin1.conf
 # 变更里面的域名即可
